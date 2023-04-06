@@ -1,0 +1,75 @@
+POST http://localhost:9000/product/create
+content-type: application/json
+
+{
+   "data": {
+    "name": "Redmi",
+    "description": "Good Condition",
+    "price": 5000,
+    "offerprice": 3750,
+    "offerPercentage": "33%",
+    "category_type": "Mobile",
+    "shipping": true,
+    "available": true
+   }
+}
+
+###
+GET  http://localhost:9000/products/5f09fa2de8cf3c12acf9b869
+content-type: application/json
+
+###
+GET  http://localhost:9000/products/deal/5ef6380916977b15408ef79c
+content-type: application/json
+
+###
+
+POST http://localhost:9000/product/edit/5ef6380916977b15408ef79c
+content-type: application/json
+
+{
+    "data": {
+        "price": 14500,
+        "offerPercentage": "30%"
+    }
+}
+
+###
+POST http://localhost:9000/category/create
+content-type: application/json
+
+{
+    "data": {
+        "name": "Charger"
+    }
+}
+
+###
+GET  http://localhost:9000/category/5ef73c51f7559c286c25151c
+content-type: application/json
+
+###
+PUT http://localhost:9000/category/edit/5ef74433bffaef44984e1190
+content-type: application/json
+
+{
+    "data": {
+        "name": "Laptops"
+    }
+}
+
+###
+POST http://localhost:9000/cart/addtocart
+Content-Type: application/json
+
+{
+    "data": {
+        "user_id": "009",
+        "product_id": "5f09fa2de8cf3c12acf9b869",
+        "quantity": "1"
+    }
+}
+
+####
+GET  http://localhost:9000/cart
+Content-Type: application/json
